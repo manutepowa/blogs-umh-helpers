@@ -1,19 +1,13 @@
-(function(){
-  $(document).ready(function() {
-        // $('body').css("background","red");
-        $('button').click(function(){
-          $('body').css("background","red");
-          console.log($(document));
-        });
-  });
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+	console.log(request.greeting);
+	$('.content').css("background", "red");
+});
 
-    // function cuentaTexto()
-    // {
-    //     $nodeTemp = $(this).clone();
-    //     $nodeTemp.find('.gmail_quote').remove();
-    //     $('.contadorExt').remove();
-    //     var numChar = $nodeTemp.text().length+1;
-    //     var html = '<div class="contadorExt">' + numChar + '</div>';
-    //     $('.aWQ').append(html);
-    // }
-}());
+// (function () {
+// 	chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+// 		alert("sola");
+// 		console.log("request.greeting");
+// 		$('.content').css("background", "red");
+// 	});
+//
+// })();
