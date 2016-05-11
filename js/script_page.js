@@ -1,13 +1,12 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	console.log(request.greeting);
-	$('.content').css("background", "red");
-});
+	var saltosLinea = "&nbsp;</ br>&nbsp;</ br>&nbsp;</ br>\n";
 
-// (function () {
-// 	chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-// 		alert("sola");
-// 		console.log("request.greeting");
-// 		$('.content').css("background", "red");
-// 	});
-//
-// })();
+	$('textarea#content').text(function () {
+		var cursorPos = $(this).prop('selectionStart');
+		var v = $(this).val();
+		var textBefore = v.substring(0, cursorPos);
+		var textAfter = v.substring(cursorPos, v.length);
+		$(this).val(textBefore + saltosLinea + textAfter);
+	});
+});

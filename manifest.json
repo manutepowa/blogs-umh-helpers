@@ -18,7 +18,7 @@
 	},
 	"content_scripts": [{
 		"matches": [
-			"http://comunicacion.umh.es/"
+			"http://tienda.umh.es/*"
 		],
 		"js": ["js/jquery.min.js", "js/script_page.js"]
 	}]
