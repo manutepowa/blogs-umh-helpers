@@ -5,7 +5,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	var imagen = "[nggallery id=000]";
 
 	if (request.greeting == "sl") {
-		$('textarea').text(function () {
+		$('textarea#ppqtrans_textarea_content').text(function () {
 			var cursorPos = $(this).prop('selectionStart');
 			var v = $(this).val();
 			var textBefore = v.substring(0, cursorPos);
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			$(this).val(textBefore + saltosLinea + textAfter);
 		});
 	} else if (request.greeting == "ad") {
-		$('textarea').text(function () {
+		$('textarea#ppqtrans_textarea_content').text(function () {
 			var cursorPos = $(this).prop('selectionStart');
 			var v = $(this).val();
 			var textBefore = v.substring(0, cursorPos);
@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 			$(this).val(textBefore + audio + textAfter);
 		});
 	} else if (request.greeting == "im") {
-		$('textarea').text(function () {
+		$('textarea#ppqtrans_textarea_content').text(function () {
 			var cursorPos = $(this).prop('selectionStart');
 			var v = $(this).val();
 			var textBefore = v.substring(0, cursorPos);
